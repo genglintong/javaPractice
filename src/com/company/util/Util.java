@@ -13,4 +13,11 @@ public class Util {
         nums[b] = nums[a] ^ nums[b];
         nums[a] = nums[a] ^ nums[b];
     }
+
+    public static <E> void printArray(E[] array) {
+        for (E e : array) {
+            System.out.printf("%s ", e);
+        }
+        System.out.println();
+    }
 }
