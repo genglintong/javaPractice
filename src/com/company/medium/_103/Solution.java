@@ -29,11 +29,6 @@ public class Solution {
         while (!queue.isEmpty()) {
             int len = queue.size();
 
-            for (int i = 0 ; i < len ; i++) {
-                System.out.print(queue.get(i).val + "#");
-            }
-            System.out.println(len + " " + d);
-
             List<Integer> res = new ArrayList<>();
             LinkedList<TreeNode> q = new LinkedList<>();
             for (int i = 0 ; i < len ; i++) {
