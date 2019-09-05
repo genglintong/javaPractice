@@ -27,9 +27,10 @@ public class Solution {
 
         preNode.next = head;
 
-        k = k % len;
+        k = len - k % len;
+
         node = head;
-        while (k-- > 0) {
+        while (--k > 0) {
             node = node.next;
         }
         System.out.print(node.val);
@@ -41,5 +42,6 @@ public class Solution {
     public static void main(String[] args) {
         Solution solution = new Solution();
         ListNode.print(solution.rotateRight(ListNode.createTestData(new int[]{1,2,3,4,5}), 2));
+        ListNode.print(solution.rotateRight(ListNode.createTestData(new int[]{1,2}), 1));
     }
 }
