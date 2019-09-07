@@ -19,29 +19,34 @@ public class Solution {
         int s = 0, e = n - 1;
 
         while (s <= e) {
-            while (nums[s] == 0) {
+            while (s < n && nums[s] == 0) {
                 s++;
-            };
-            while (nums[e--] != 0) {
+            }
+            while (e >= 0 && nums[e] != 0) {
                 e--;
-            };
-            System.out.println(e + " " + s);
-            Util.swap(nums, e, s);
+            }
+            if (s < e) {
+                Util.swap(nums, e, s);
+            }
         }
-
-        System.out.println(Arrays.toString(nums));
 
         e = n - 1;
         while (s <= e) {
-            while (nums[s++] != 1);
-            while (nums[e--] == 1);
-            Util.swap(nums, e, s);
+            while (s < n && nums[s] == 1) {
+                s++;
+            }
+            while (e >= 0 && nums[e] != 1) {
+                e--;
+            }
+            if (s < e) {
+                Util.swap(nums, e, s);
+            }
         }
     }
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        int[] nums = new int[]{0,2,1,0,2,1,0};
+        int[] nums = new int[]{0,0};
         solution.sortColors(nums);
         System.out.println(Arrays.toString(nums));
     }
