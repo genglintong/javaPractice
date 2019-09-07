@@ -47,8 +47,33 @@ public class Solution {
         return list;
     }
 
+    public List<List<Integer>> combineOpti(int n , int k) {
+        List<Integer> res = new ArrayList<>();
+        List<List<Integer>> list = new ArrayList<>();
+
+        for (int i = 0 ; i < n ; i++) {
+            res.add(i, i + 1);
+        }
+        combineOptiHelper(res, list, n , k , 0);
+        return list;
+    }
+
+    public void combineOptiHelper(List<Integer> res ,List<List<Integer>> list , int n , int k , int pos) {
+        if (res.size() == k) {
+            list.add(res);
+            return;
+        }
+        for (int i = pos ; i < n ; i++) {
+            List<Integer> temp = new ArrayList<>(res);
+
+            res.remove(n - i - 1);
+            combineOptiHelper(res, list, n, k, i + 1);
+            res = temp;
+        }
+    }
+
     public static void main(String[] args) {
         Solution solution = new Solution();
-        System.out.println(solution.combine(20,16));
+        System.out.println(solution.combineOpti(20,16));
     }
 }
