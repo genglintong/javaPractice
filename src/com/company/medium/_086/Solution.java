@@ -13,24 +13,30 @@ import com.company.util.ListNode;
  */
 public class Solution {
     public ListNode partition(ListNode head, int x) {
-
-        ListNode maxHead = new ListNode(0), minHead = new ListNode(0);
+        ListNode before_head = new ListNode(0);
+        ListNode after_head = new ListNode(0);
+        ListNode before = before_head, after = after_head;
 
         while (head != null) {
-            ListNode h = head, pre;
-            while (head != null && head.val < x) {
-                pre = head;
-                head = head.next;
+            if (head.val < x) {
+                before.next = head;
+                before = before.next;
+            }else {
+                after.next = head;
+                after = after.next;
             }
-            if (head != h) {
-                minHead.next = h;
 
-            }
+            head = head.next;
         }
-        return null;
+
+        after.next = null;
+        before.next = after_head.next;
+
+        return before_head.next;
     }
 
     public static void main(String[] args) {
-
+        Solution solution = new Solution();
+        ListNode.print(solution.partition(ListNode.createTestData(new int[]{1,4,3,2,5,2}),3));
     }
 }
