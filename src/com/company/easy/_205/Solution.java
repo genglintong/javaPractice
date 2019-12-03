@@ -69,6 +69,11 @@ public class Solution {
         return true;
     }
 
+    public void test(int n) {
+        System.out.println(n);
+        return;
+    }
+
     public static void main(String[] args) {
         String s = "ab";
         String t = "aa";
@@ -76,5 +81,11 @@ public class Solution {
         Solution solution = new Solution();
 
         System.out.println(solution.isIsomorphic(s, t));
+//
+//
+//        Map<Integer, Integer> map = new HashMap<>();
+//        map.put(1,2);
+//
+//        solution.test(map.get(2));
     }
 }
