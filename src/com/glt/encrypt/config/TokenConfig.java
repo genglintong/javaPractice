@@ -12,8 +12,8 @@ public class TokenConfig {
     /**
      * 获取小猴编程的URL
      */
-    //@Value("${token.programming.host:https://test.xiaohoucode.com}")
-    private String host = "https://test.xiaohoucode.com";
+    //@Value("${token.programming.host:}")
+    private String host = "";
 
     /**
      * 小猴编程 PATH
@@ -24,11 +24,11 @@ public class TokenConfig {
     /**
      * 小猴编程 RSA key
      */
-    //@Value("${token.programming.secret:8wWqckrMtgF8MdsB}")
-    private String secret = "weMoPjZaLas4MmBd";
+    //@Value("${token.programming.secret:}")
+    private String secret = "";
 
-    //@Value("${token.programming.accessKeyId:MsPh0iGtoL}")
-    private String accessKeyId = "MsPh0iGtoL";
+    //@Value("${token.programming.accessKeyId:}")
+    private String accessKeyId = "";
 
     public String getHost() {
         return host;

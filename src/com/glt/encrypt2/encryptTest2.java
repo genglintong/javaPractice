@@ -21,7 +21,7 @@ public class encryptTest2 {
 //        final String requestURI = "/api/public/v1/practices/search-page";
         final String requestURI = "/api/public/dointeract";
         final String accessKeyId = "MsPh0iGtoL";
-        final String algorithm = "HmacSHA256";
+        final String algorithm = "";
         final String nonce = UUID.randomUUID().toString();
         // 结束 -> 修改这些参数
         final long ts = System.currentTimeMillis() / 1000;
@@ -38,10 +38,10 @@ public class encryptTest2 {
         sortedParameters.put("studentName", "1");
 
         final String text = concat(httpMethod, requestURI, sortedParameters);
-        String secretKey = "8wWqckrMtgF8MdsB";
+        String secretKey = "";
 
         String sign = SignatureUtil.sign(text, secretKey, algorithm);
-        System.out.println("https://test.xiaohoucode.com" + requestURI + "?" +
+        System.out.println("" + requestURI + "?" +
                 Constants.QUERY_PARAM_ACCESS_KEY_ID + "=" + accessKeyId + "&" +
                 Constants.QUERY_PARAM_ALGORITHM + "=" + algorithm + "&" +
                 Constants.QUERY_PARAM_NONCE + "=" + nonce + "&" +
